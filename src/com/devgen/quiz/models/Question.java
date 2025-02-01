@@ -9,6 +9,7 @@ public class Question {
     private String option3;
     private String option4;
     private String answer;
+    private String category; //soft, medium, hard
 
 
     public Question(int id, String question, String option1, String option2, String option3, String option4,
