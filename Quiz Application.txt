@@ -1,0 +1,116 @@
+
+
+Mini Projects - 
+
+1. Quiz Application - 
+
+You are an organizor of quiz competation where multiple students will play quiz online on your platform. Your current platform is console based rather than GUI based.
+
+Requirements from Student:
+	1. Platform should support multiple questions based on different types with unique identifier associated with it.
+	2. Each question should show multiple choices to select as an answer and at a time only one answer is accepted.
+	3. Each question should have correct answer to know if selected answer is correct or not.
+	4. Platform should show the final score to student after taking all quiz questions interactively.
+		The score format should include following details - 
+			1. Total correct answers given and total incorrect answers
+			2. Total percentage 
+			3. If the percentage of student is in diff range - provide suggestion like following
+				0 - 30 -> You must study much harder.
+				31 - 60 -> You are studying good. Need some more study
+				61 - 90 -> You are becoming topper and just bit of extra effors little required
+				91 - 100 -> You are very good at concepts and being into top list.
+	
+
+Requirement from Trainer/Organizer/Admin:
+
+	1. Your platform should have initial set of hard coded questions to start with quiz.
+	2. It should also support feature to add/upload new question sets to the platform.
+	3. Trainer can modify the question with their options.
+	4. Trainer can delete the questions if it's no more valid questions or obsolute.
+
+
+
+- Arrays, Objects, Constructor, getter/setters, methods, looping etc.. 
+
+
+Main.java   -> QuizService / QuestionService
+			-> getAllQuestions(), playQuiz(), getTotalScore(), 
+			-> addQuestion(), deleteQuestion(), updateQuestion()
+
+
+
+
+Steps: ( low level design )
+
+1. Identify the domain objects
+
+2. Identify the user persona who are going to interact with our system
+
+3. Identify the features to be provided
+
+4. Identify the data/object storage requirement - 
+		i. in memory
+		ii. database
+		iii. file etc.
+
+5. Identify the services that you will be providing
+
+
+
+
+
+
+## SOLUTION #########
+
+1. Identify the domain objects
+
+		- Objects who will represent the entities in your application.
+
+		Student - id, name, email, phone, rights etc.
+
+		Admin - id, name, email, phone, rights etc.
+
+		Question - id, question, opt1, opt2, opt3, opt4, answer
+
+		QuizResult - student_name, totalCorrectAnswers, totalIncorrectAnswers, percentage, suggestion
+
+2. Identify the user persona who are going to interact with our system
+	
+		- Student
+
+		- Admin/Trainer
+
+3. Identify the features to be provided - 
+	
+		- listing of questions
+		- retrieving the final result post submission of quiz
+
+4. Identify the data/object storage requirement
+	 
+	 	- For now, we will store into main memory ( JVM application memory ) but in reality we will use database in future/file.
+
+
+5. Identify the services that you will be providing - 
+	
+
+	OOP - Encapsulation
+
+		Object -> attributes & behaviours
+
+		Student -> (id, name, email) 
+				-> 
+
+		a. QuestionService - for mananing Question domain object
+				- list of questions
+				- add new question
+				- delete question
+				- retrieve specific question
+				- update question
+
+		b. QuizService
+				- playQuiz
+				- retrieving the final result of quiz
+
+
+
+
