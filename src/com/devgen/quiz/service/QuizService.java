@@ -8,9 +8,10 @@ public class QuizService {
 
     private String[] userSelectedAnswers = new String[5];
 	private Question[] questions;	
+	private QuestionService questionService; 
 	
-	public QuizService() {
-		QuestionService questionService = new QuestionService();    
+	public QuizService(QuestionService questionService) {
+		this.questionService = questionService;		
 		questions = questionService.getAllQuestion();
 	}
 
@@ -52,6 +53,8 @@ public class QuizService {
     	System.out.println("Correct Answers:"+correctAnswers);
     	System.out.println("Incorrect Answers:"+incorrectAnswers);
     	System.out.println("Percentage:"+percentage);
+    	
+    	
     	
     }
 }
