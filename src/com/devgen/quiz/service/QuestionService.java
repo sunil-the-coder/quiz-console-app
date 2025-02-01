@@ -1,13 +1,10 @@
 package com.devgen.quiz.service;
 
-import java.util.Scanner;
-
 import com.devgen.quiz.models.Question;
 
 public class QuestionService {
     
     private Question[] questions = new Question[5];
-    private String[] userSelectedAnswers = new String[5];
 
     public QuestionService() {
     	
@@ -19,43 +16,21 @@ public class QuestionService {
 
     }
     
-    public void playQuiz() {
-    	
-    	 for(int i = 0; i < questions.length; i++) {
-             
-         	System.out.println("Question: "+questions[i].getId());
-         	System.out.println(questions[i].getQuestion());
-         	
-         	System.out.println(questions[i].getOption1());
-         	System.out.println(questions[i].getOption2());
-         	System.out.println(questions[i].getOption3());
-         	System.out.println(questions[i].getOption4());
-         	
-         	Scanner scan = new Scanner(System.in);
-         	
-         	userSelectedAnswers[i] = scan.next();
-         	         	         		
-         }
+    public String addQuestion(Question question) {
+    	return "Question added succesfully";
     }
     
-    public void printFinalScore() {
-    	
-    	int correctAnswers = 0;
-    	for(int i = 0; i < userSelectedAnswers.length; i++) {
-    		if(questions[i].getAnswer().equals(userSelectedAnswers[i])) {
-    			correctAnswers++;
-    		}
-    	}
-    	
-    	int incorrectAnswers = questions.length - correctAnswers;
-    	
-    	//( 2 / 5) * 100
-    	double percentage = ((double) correctAnswers / questions.length)  * 100;
-    	
-    	System.out.println("Correct Answers:"+correctAnswers);
-    	System.out.println("Incorrect Answers:"+incorrectAnswers);
-    	System.out.println("Percentage:"+percentage);
-    	
+    public String updateQuestion(Question question) {
+    	return "Question updated succesfully";
     }
-
+    
+    public String deleteQuestion(int id) {
+    	return "Question deleted succesfully";
+    }
+    
+    public Question[] getAllQuestion() {
+    	return questions;
+    }
+    
+   
 }
