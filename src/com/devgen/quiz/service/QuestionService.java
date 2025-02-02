@@ -50,6 +50,16 @@ public class QuestionService {
     }
     
     public void deleteQuestion(int id) {
+    	
+    	for(int i = 0; i < questions.length; i++) {
+    		if( id == questions[i].getId() ) {
+    			questions[i] = null; // 
+    			
+    			//delete questions[i];
+    		}
+    	}   
+    	
+    	
     	System.out.println("Question deleted succesfully");
     }
     
