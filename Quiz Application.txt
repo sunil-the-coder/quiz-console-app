@@ -27,7 +27,10 @@ Requirement from Trainer/Organizer/Admin:
 	2. It should also support feature to add/upload new question sets to the platform.
 	3. Trainer can modify the question with their options.
 	4. Trainer can delete the questions if it's no more valid questions or obsolute.
+	5. Trainer should be able to search the question based on given search criteria.
 
+		i/p -> data types
+		o/p -> 3 questions should be returned.
 
 
 - Arrays, Objects, Constructor, getter/setters, methods, looping etc.. 
@@ -123,10 +126,16 @@ Array -
 
 	1. Fixed Size - It can't grow and shrink dynamically.
 
-	If you want to drynamically grow or shrink:
+	If you want to dynamically grow or shrink:
 		If you have to write logic to support this usecase.
 
 
 	Collections Framework - 
 
 		Dynamically grow & shrink - 
+
+		ArrayList -> 
+				internally it is used in array - 
+
+
+

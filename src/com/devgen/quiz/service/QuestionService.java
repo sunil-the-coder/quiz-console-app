@@ -69,5 +69,13 @@ public class QuestionService {
     	return questions;
     }
     
+    public Question[] searchQuestions(String searchStr) {
+    	
+    	//TODO: Search the questions based on the given search string and return the matching questions to the user.
+    	//i/p -> "data type"
+    	
+    	return null;
+    }
+    
    
 }
