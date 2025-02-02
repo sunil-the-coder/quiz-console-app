@@ -10,6 +10,7 @@ public class QuizAppClient {
         
     	QuestionService questionService = new QuestionService(5);
     	QuizService quizService = new QuizService(questionService);
+    	
     	quizService.playQuiz();
     	
     	QuizResult result = quizService.getResult();
