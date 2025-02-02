@@ -21,19 +21,16 @@ public class QuizService {
     	Scanner scan = new Scanner(System.in);
     	
     	 for(int i = 0; i < questions.length; i++) {
-    		 Question question = null;
-    	//	 question.getId(); // NPE
-             
+    		 
          	System.out.println("Question: "+questions[i].getId());
+         	
          	System.out.println(questions[i].getQuestion());
-         	
-         	System.out.println(questions[i].getOption1());
-         	System.out.println(questions[i].getOption2());
-         	System.out.println(questions[i].getOption3());
-         	System.out.println(questions[i].getOption4());         
-         	
-         	userSelectedAnswers[i] = scan.next();
-         	         	         		
+         	         	
+         	for(String option : questions[i].getOptions()) {
+         		System.out.println(option);                		
+         	}
+                  	
+         	userSelectedAnswers[i] = scan.next();         	         	         		
          }
     	 
     	 scan.close();

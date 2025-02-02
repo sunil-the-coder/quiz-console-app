@@ -14,19 +14,19 @@ public class QuestionService {
     	
     	questions = new Question[size]; 
     	
-    	questions[current] = new Question(1, "Size of short data type", "2", "4", "1", "8", "2");
+    	questions[current] = new Question(1, "Size of short data type", new String[] {"2", "4", "1", "8"}, "2");
     	current++;
     	
-    	questions[current] = new Question(2, "Size of int data type", "2", "4", "1", "8", "4");
+    	questions[current] = new Question(2, "Size of int data type", new String[] {"2", "4", "1"}, "4");
     	current++;
     	
-    	questions[current] = new Question(3, "Size of float data type", "2", "4", "1", "8", "4");
+    	questions[current] = new Question(3, "Size of float data type", new String[] {"2", "4", "1", "8"}, "4");
     	current++;
     	
-    	questions[current] = new Question(4, "Size of double data type", "2", "4", "1", "8", "8");
+    	questions[current] = new Question(4, "Size of double data type", new String[] {"2", "4", "1", "8"}, "8");
     	current++;
     	
-    	questions[current] = new Question(5, "Size of char data type", "2", "4", "1", "8", "2");
+    	questions[current] = new Question(5, "Size of char data type", new String[] {"2", "4"}, "2");
     	current++;
 
     }
