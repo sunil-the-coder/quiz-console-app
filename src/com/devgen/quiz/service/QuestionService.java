@@ -52,10 +52,12 @@ public class QuestionService {
     public void deleteQuestion(int id) {
     	
     	for(int i = 0; i < questions.length; i++) {
-    		if( id == questions[i].getId() ) {
-    			questions[i] = null; // 
-    			
-    			//delete questions[i];
+    		if(questions[i] != null) {
+	    		if( id == questions[i].getId() ) {
+	    			questions[i] = null; // making eligible for garbage collector to be removed from heap memory in next cycle of run.
+	    			
+	    			//delete questions[i]; - C++
+	    		}
     		}
     	}   
     	

@@ -114,3 +114,19 @@ Steps: ( low level design )
 
 
 
+Strign s = null;
+s.toppercase() -> NPE
+
+
+
+Array - 
+
+	1. Fixed Size - It can't grow and shrink dynamically.
+
+	If you want to drynamically grow or shrink:
+		If you have to write logic to support this usecase.
+
+
+	Collections Framework - 
+
+		Dynamically grow & shrink - 

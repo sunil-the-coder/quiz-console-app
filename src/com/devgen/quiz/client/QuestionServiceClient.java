@@ -42,6 +42,9 @@ public class QuestionServiceClient {
 		
 		System.out.println("--------------------------------------------------------------");
 		questionService.deleteQuestion(4);
+		questionService.deleteQuestion(1);
+		questionService.deleteQuestion(6);
+		questionService.deleteQuestion(8);
 		
 		questions = questionService.getAllQuestion();
 		for(Question q : questions)
