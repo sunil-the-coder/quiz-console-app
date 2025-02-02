@@ -47,22 +47,19 @@ public class QuizService {
     	
     	int incorrectAnswers = questions.length - correctAnswers;
     	
-    	//( 2 / 5) * 100
     	double percentage = ((double) correctAnswers / questions.length)  * 100;
     	
-    	
+ 
     	String suggestion = getSuggestion(percentage);
-        	
     	
     	QuizResult quizResult = new QuizResult(correctAnswers, incorrectAnswers, percentage, suggestion);
     	
     	return quizResult;
     	
     }
-    
-    private String getSuggestion(double percentage) {
-    	
-    	String suggestion = "";
+
+	private String getSuggestion(double percentage) {
+		String suggestion = "";
     	
     	if(percentage >= 0 && percentage <= 30) {
     		suggestion = "You must study much harder";
@@ -73,7 +70,9 @@ public class QuizService {
     	}else {
     		suggestion = "You are very good at concepts and being into top list.";
     	}
-    	
-    	return suggestion;
-    }
+		return suggestion;
+	}
+    
+    
+   
 }
