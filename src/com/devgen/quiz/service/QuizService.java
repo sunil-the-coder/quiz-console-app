@@ -3,6 +3,7 @@ package com.devgen.quiz.service;
 import java.util.Scanner;
 
 import com.devgen.quiz.models.Question;
+import com.devgen.quiz.models.QuizResult;
 
 public class QuizService {
 
@@ -12,7 +13,7 @@ public class QuizService {
 	
 	public QuizService(QuestionService questionService) {
 		this.questionService = questionService;		
-		questions = questionService.getAllQuestion();
+		questions = this.questionService.getAllQuestion();
 	}
 
 	public void playQuiz() {
@@ -20,6 +21,8 @@ public class QuizService {
     	Scanner scan = new Scanner(System.in);
     	
     	 for(int i = 0; i < questions.length; i++) {
+    		 Question question = null;
+    	//	 question.getId(); // NPE
              
          	System.out.println("Question: "+questions[i].getId());
          	System.out.println(questions[i].getQuestion());
@@ -36,7 +39,7 @@ public class QuizService {
     	 scan.close();
     }
     
-    public void printFinalScore() {
+    public QuizResult getResult() {
     	
     	int correctAnswers = 0;
     	for(int i = 0; i < userSelectedAnswers.length; i++) {
@@ -50,9 +53,22 @@ public class QuizService {
     	//( 2 / 5) * 100
     	double percentage = ((double) correctAnswers / questions.length)  * 100;
     	
-    	System.out.println("Correct Answers:"+correctAnswers);
-    	System.out.println("Incorrect Answers:"+incorrectAnswers);
-    	System.out.println("Percentage:"+percentage);
+    	String suggestion = "";
+    	
+    	if(percentage >= 0 && percentage <= 30) {
+    		suggestion = "You must study much harder";
+    	}else if(percentage >= 31 && percentage <= 60) {
+    		suggestion = "You are studying good. Need some more study";
+    	}else if(percentage >= 61 && percentage <= 90) {
+    		suggestion = "You are becoming topper and just bit of extra effors little required";
+    	}else {
+    		suggestion = "You are very good at concepts and being into top list.";
+    	}
+    	
+    	
+    	QuizResult quizResult = new QuizResult(correctAnswers, incorrectAnswers, percentage, suggestion);
+    	
+    	return quizResult;
     	
     	
     	
