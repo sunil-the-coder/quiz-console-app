@@ -18,7 +18,7 @@ public class QuestionService {
     	
     	questions[current++] = new Question(2, "Is Java Object Oriented Lang ?", new String[] {"true", "false"}, 1);
     	
-    	questions[current++] = new Question(3, "Size of float data type", new String[] {"2", "4", "1", "8"}, 2);
+    	questions[current++] = new Question(3, "Size of float data type", new String[] {"2", "4", "1", "8"}, 1);
     	
     	questions[current++] = new Question(4, "How do you create a variable with the numeric value 5?", new String[] {"int x=5;", "float f=4.5;", "num x=5", "x=5"}, 1);
     	    	
@@ -26,19 +26,31 @@ public class QuestionService {
 	}
 	
     
-    public String addQuestion(Question question) {
+    public void addQuestion(Question question) {
     	questions[current] = question;  
     	current++;
     	
-    	return "Question added succesfully";
+    	System.out.println("Question added succesfully");
     }
     
-    public String updateQuestion(Question question) {
-    	return "Question updated succesfully";
+    public void updateQuestion(Question modifiedQuestion) {
+    	
+    	//1. find the question for the given id.
+    	
+    	int id = modifiedQuestion.getId();
+    	
+    	for(int i = 0; i < questions.length; i++) {
+    		if( id == questions[i].getId() ) {
+    			questions[i] = modifiedQuestion;
+    			break;
+    		}
+    	}    	
+    	
+    	System.out.println("Question updated succesfully");
     }
     
-    public String deleteQuestion(int id) {
-    	return "Question deleted succesfully";
+    public void deleteQuestion(int id) {
+    	System.out.println("Question deleted succesfully");
     }
     
     public Question[] getAllQuestion() {
